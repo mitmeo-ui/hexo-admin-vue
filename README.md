@@ -1,6 +1,6 @@
-# hexo-admin-tools
+# hexo-admin-vue
 
-> A Vue.js project
+> Content editor UI for [hexo](https://hexo.io/) blog engine written in Vue.
 
 ## Build Setup
 
