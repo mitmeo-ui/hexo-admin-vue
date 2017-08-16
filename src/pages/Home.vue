@@ -77,7 +77,7 @@ $side-width: 300px;
 
     .list-items {
       overflow-x: hidden;
-      overflow-y: scroll;
+      overflow-y: auto;
       position: absolute;
       left: 0;
       right: 0;

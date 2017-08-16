@@ -22,7 +22,7 @@ export default {
         return '';
       },
       set(val) {
-        console.log(val);
+        this.test = val;
       },
     },
   },
