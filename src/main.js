@@ -7,8 +7,11 @@ import router from './router';
 import store from './store';
 
 import http from './services/http';
+import elementUI from './services/element-ui';
 
 Vue.config.productionTip = false;
+Vue.use(elementUI);
+
 Vue.use(http);
 
 /* eslint-disable no-new */

@@ -8,8 +8,16 @@ function json(obj) {
 const api = (router, hexo) => {
   const posts = HexoPosts(hexo);
 
-  router.get('/posts', (req, res) => {
-    res.end(json(posts.all()));
+  router.get('/post/list/:search', (req, res) => {
+    posts.all(req.params.search).then((data) => {
+      res.end(json(data));
+    });
+  });
+
+  router.get('/post/list', (req, res) => {
+    posts.all().then((data) => {
+      res.end(json(data));
+    });
   });
 };
 

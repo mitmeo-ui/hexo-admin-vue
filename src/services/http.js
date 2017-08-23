@@ -1,12 +1,27 @@
 import axios from 'axios';
+import { Message } from 'element-ui';
 
-const errorHandler = (err) => {
-  console.error(err);
+const handleError = (err) => {
+  let message;
+  if (err.response) {
+    message = `${err.response.status} ${err.response.statusText}: `;
+  }
+  message += ` ${err.message || err}`;
+
+  Message({
+    message,
+    type: 'error',
+    showClose: true,
+  });
+
+  return Promise.reject(err);
 };
 
-const get = url => axios.get(url).catch(errorHandler);
-const post = (url, payload) => axios.post(url, payload).catch(errorHandler);
-const put = (url, payload) => axios.put(url, payload).catch(errorHandler);
+axios.interceptors.response.use(response => response, error => Promise.reject(error));
+
+const get = url => axios.get(url).catch(handleError);
+const post = (url, payload) => axios.post(url, payload).catch(handleError);
+const put = (url, payload) => axios.put(url, payload).catch(handleError);
 
 export default {
   install(Vue) {

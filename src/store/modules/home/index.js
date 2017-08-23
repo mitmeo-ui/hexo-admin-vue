@@ -1,10 +1,12 @@
-import * as actions from './actions';
-import * as mutations from './mutations';
+import actions from './actions';
+import mutations from './mutations';
 
 const state = {
   searchType: 'post',
   searchTerm: '',
   selectedContent: '',
+  listLoading: false,
+  contentLoading: false,
 };
 
 export default {

@@ -1,11 +1,23 @@
-export const searchType = (state, type) => {
-  state.searchType = type;
+import {
+  SEARCH_TYPE,
+  SEARCH_TERM,
+  LIST_LOADING,
+  SELECT_CONTENT,
+} from '@/store/types';
+
+export default {
+  [SEARCH_TYPE](state, type) {
+    state.searchType = type;
+    state.searchTerm = null;
+  },
+  [SEARCH_TERM](state, term) {
+    state.searchTerm = term;
+  },
+  [SELECT_CONTENT](state, id) {
+    state.selectedContent = id;
+  },
+  [LIST_LOADING](state, loading) {
+    state.listLoading = loading;
+  },
 };
 
-export const searchTerm = (state, term) => {
-  state.searchTerm = term;
-};
-
-export const selectContent = (state, id) => {
-  state.selectedContent = id;
-};

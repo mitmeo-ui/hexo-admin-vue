@@ -3,7 +3,7 @@
     <div id="content-list" class="home-column">
       <content-search-filter></content-search-filter>
       <div class="list-items">
-        <content-search-list :items="searchItems"></content-search-list>
+        <content-search-list></content-search-list>
       </div>
     </div>
     <div id="content" class="home-column">
@@ -40,15 +40,6 @@ export default {
     if (id && id !== selectedContent) {
       this.setSelectedContent(id);
     }
-
-    this.$http.get('/admin/api/posts').then((result) => {
-      if (result.data) {
-        this.searchItems = result.data.map(item => ({
-          id: item._id,
-          text: item.title,
-        }));
-      }
-    });
   },
   methods: {
     ...mapActions('home', [
