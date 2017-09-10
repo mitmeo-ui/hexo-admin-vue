@@ -62,7 +62,7 @@ $side-width: 300px;
 
   #content-list {
     width: 20%;
-    background: #f9f9f9;
+    background: $bg-grey;
     border-right: 1px solid #d1dbe5;
     position: relative;
 

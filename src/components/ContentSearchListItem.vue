@@ -34,14 +34,15 @@ export default {
   text-decoration: none;
   padding: 5px 12px;
   font-size: 0.8em;
-  color: #aaa;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
 
   &:hover {
     background: #eee;
   }
 
   &.active {
-    background: #20a0ff;
+    background: $main-blue;
     color: #fff;
   }
 }

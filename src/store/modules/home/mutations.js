@@ -1,7 +1,6 @@
 import {
   SEARCH_TYPE,
   SEARCH_TERM,
-  LIST_LOADING,
   SELECT_CONTENT,
 } from '@/store/types';
 
@@ -15,9 +14,6 @@ export default {
   },
   [SELECT_CONTENT](state, id) {
     state.selectedContent = id;
-  },
-  [LIST_LOADING](state, loading) {
-    state.listLoading = loading;
   },
 };
 

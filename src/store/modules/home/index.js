@@ -5,7 +5,6 @@ const state = {
   searchType: 'post',
   searchTerm: '',
   selectedContent: '',
-  listLoading: false,
   contentLoading: false,
 };
 

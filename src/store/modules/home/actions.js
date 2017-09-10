@@ -1,7 +1,6 @@
 import {
   SEARCH_TYPE,
   SEARCH_TERM,
-  LIST_LOADING,
   SELECT_CONTENT,
 } from '@/store/types';
 
@@ -16,9 +15,6 @@ export default {
   },
   setSelectedContent({ commit }, id) {
     commit(SELECT_CONTENT, id);
-  },
-  setListLoading({ commit }, loading) {
-    commit(LIST_LOADING, loading);
   },
 };
 
