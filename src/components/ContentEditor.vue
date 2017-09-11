@@ -4,14 +4,22 @@
       No Content
     </div>
     <div class="content" v-if="content">
-      {{content}}
+      <content-editor-toolbar></content-editor-toolbar>
+      <content-editor-markdown></content-editor-markdown>
     </div>
   </div>
 </template>
 
 <script>
+import ContentEditorToolbar from '@/components/ContentEditorToolbar';
+import ContentEditorMarkdown from '@/components/ContentEditorMarkdown';
+
 export default {
   name: 'content-editor',
+  components: {
+    [ContentEditorToolbar.name]: ContentEditorToolbar,
+    [ContentEditorMarkdown.name]: ContentEditorMarkdown,
+  },
   computed: {
     content: {
       get() {
@@ -30,10 +38,16 @@ export default {
 </script>
 <style lang="scss">
 #editor {
+  height: 100%;
+  .content {
+    height: 100%;
+    position: relative;
+  }
   .empty {
     font-size: 4em;
     color: #eee;
-    margin: 50px auto;
+    margin: 0 auto;
+    padding-top: 20px;
     text-align: center;
   }
 }

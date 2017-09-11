@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss">
 #content-search-filter {
+  border-right: $grey-border;
   .list-selection {
     position: static;
     left: 0;

@@ -53,7 +53,7 @@ export default {
 $side-width: 300px;
 
 #home {
-  min-width: 1024px;
+  min-width: 992px;
   height: 100%;
   .home-column {
     height: 100%;
@@ -62,8 +62,7 @@ $side-width: 300px;
 
   #content-list {
     width: 20%;
-    background: $bg-grey;
-    border-right: 1px solid #d1dbe5;
+    background: $grey-bg;
     position: relative;
 
     .list-items {
@@ -78,7 +77,7 @@ $side-width: 300px;
   }
 
   #content {
-    width: 79%;
+    width: 80%;
   }
 }
 </style>

@@ -42,7 +42,7 @@ export default {
   }
 
   &.active {
-    background: $main-blue;
+    background: $blue-main;
     color: #fff;
   }
 }

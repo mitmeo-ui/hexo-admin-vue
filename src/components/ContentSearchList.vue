@@ -81,10 +81,11 @@ export default {
   padding: 0;
   list-style-type: none;
   min-height: 100%;
+  border-right: $grey-border;
 
   .create-content {
     text-align: center;
-    color: $main-blue;
+    color: $blue-main;
   }
 }
 </style>
