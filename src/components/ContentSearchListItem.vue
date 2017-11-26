@@ -42,8 +42,8 @@ export default {
   }
 
   &.active {
-    background: $blue-main;
-    color: #fff;
+    background: #fff;
+    color: #666;
   }
 }
 </style>

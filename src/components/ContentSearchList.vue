@@ -33,36 +33,38 @@ export default {
     // Debounce to avoid type & search changes happen together which results in 2 calls
     this.fetch = debounce(() => {
       this.isLoading = true;
-      this.$http.get(`/admin/api/${this.searchType}/list/${this.searchTerm ? this.searchTerm : ''}`).then((result) => {
-        this.isLoading = false;
-        if (result && result.data) {
-          this.items = result.data.map(item => ({
-            id: item._id,
-            text: item.title,
-          }));
-        }
-      }).catch(() => {
-        this.isLoading = false;
-        this.items = [];
-      });
+      this.$http
+        .get(
+          `/admin/api/${this.searchType}/list/${this.searchTerm
+            ? this.searchTerm
+            : ''}`,
+        )
+        .then(result => {
+          this.isLoading = false;
+          if (result && result.data) {
+            this.items = result.data.map(item => ({
+              id: item._id,
+              text: item.title,
+            }));
+          }
+        })
+        .catch(() => {
+          this.isLoading = false;
+          this.items = [];
+        });
     }, 100);
   },
   mounted() {
     this.fetch();
   },
   methods: {
-    ...mapActions('home', [
-      'setSelectedContent',
-    ]),
+    ...mapActions('home', ['setSelectedContent']),
     createContent() {
       this.setSelectedContent(NEW_CONTENT_ID);
     },
   },
   computed: {
-    ...mapState('home', [
-      'searchType',
-      'searchTerm',
-    ]),
+    ...mapState('home', ['searchType', 'searchTerm']),
   },
   watch: {
     searchType() {
@@ -80,12 +82,13 @@ export default {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  min-height: 100%;
-  border-right: $grey-border;
+  min-height: 60px;
+  // border-right: $grey-border;
 
   .create-content {
     text-align: center;
     color: $blue-main;
+    padding: 10px;
   }
 }
 </style>

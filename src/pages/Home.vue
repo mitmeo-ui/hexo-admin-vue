@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import Split from 'split.js';
 import { mapActions } from 'vuex';
 import ContentSearchList from '@/components/ContentSearchList';
 import ContentSearchFilter from '@/components/ContentSearchFilter';
@@ -40,20 +41,37 @@ export default {
     if (id && id !== selectedContent) {
       this.setSelectedContent(id);
     }
+
+    Split(['#content-list', '#content'], {
+      sizes: [25, 75],
+      minSize: 250,
+    });
   },
   methods: {
-    ...mapActions('home', [
-      'setSearchType',
-      'setSelectedContent',
-    ]),
+    ...mapActions('home', ['setSearchType', 'setSelectedContent']),
   },
 };
 </script>
 <style lang="scss">
 $side-width: 300px;
 
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  cursor: ew-resize;
+  height: 100%;
+  float: left;
+}
+
+.gutter.gutter-vertical {
+  cursor: ns-resize;
+}
+
 #home {
-  min-width: 992px;
   height: 100%;
   .home-column {
     height: 100%;
@@ -61,23 +79,21 @@ $side-width: 300px;
   }
 
   #content-list {
-    width: 20%;
     background: $grey-bg;
-    position: relative;
 
     .list-items {
       overflow-x: hidden;
       overflow-y: auto;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 90px;
+      // position: absolute;
+      // left: 0;
+      // right: 0;
+      // bottom: 0;
+      // top: 90px;
     }
   }
 
   #content {
-    width: 80%;
+    // width: 80%;
   }
 }
 </style>

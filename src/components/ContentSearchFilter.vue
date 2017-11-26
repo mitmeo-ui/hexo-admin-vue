@@ -1,13 +1,13 @@
 <template>
   <div id="content-search-filter">
+    <div class="list-search">
+      <el-input :placeholder="searchPlaceholder" icon="search" v-model="searchTerm"></el-input>
+    </div>
     <div class="list-selection">
       <el-radio-group v-model="searchType">
         <el-radio-button label="Posts" class="first"></el-radio-button>
         <el-radio-button label="Pages" class="last"></el-radio-button>
       </el-radio-group>
-    </div>
-    <div class="list-search">
-      <el-input :placeholder="searchPlaceholder" icon="search" v-model="searchTerm"></el-input>
     </div>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss">
 #content-search-filter {
-  border-right: $grey-border;
+  // border-bottom: $grey-border;
   .list-selection {
     position: static;
     left: 0;
@@ -99,6 +99,7 @@ export default {
 
   .list-search {
     padding: 10px;
+    border-bottom: $grey-border;
   }
 }
 </style>
